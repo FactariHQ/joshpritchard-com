@@ -60,16 +60,24 @@
   </div>
 </section>
 <section class="band"><div class="wrap contact-grid">
-  <form class="form rev" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
-    <input type="hidden" name="form-name" value="contact" />
-    <p class="hp"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+  <div>
+  <form class="form rev" name="contact" method="POST" action="https://script.google.com/macros/s/AKfycbwf7NTgAYDHB70b-T0A46MqBzRNlniPco8q7eet0IFv9s9RLmqExoDuPjS-UA3hCufsCA/exec" data-contact-form data-endpoint="https://script.google.com/macros/s/AKfycbwf7NTgAYDHB70b-T0A46MqBzRNlniPco8q7eet0IFv9s9RLmqExoDuPjS-UA3hCufsCA/exec">
+    <p class="hp"><label>Leave this field empty <input name="botField" tabindex="-1" autocomplete="off" /></label></p>
     <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required /></div>
     <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required /></div>
     <div class="field"><label for="f-org">Organization <span style="text-transform:none;letter-spacing:0">(optional)</span></label><input id="f-org" name="organization" type="text" autocomplete="organization" /></div>
-    <div class="field"><label for="f-topic">What is this about?</label><select id="f-topic" name="topic"><option>Advice on my company</option><option>Speaking or teaching</option><option>Writing, press or a podcast</option><option>Partnership, sale or acquisition</option><option>Working at ACT</option><option>Something else</option></select></div>
+    <div class="field"><label for="f-topic">What is this about?</label><select id="f-topic" name="topic"><option>Advice on my company</option><option>A Quick Review Consult</option><option>Speaking or teaching</option><option>Writing, press or a podcast</option><option>Partnership, sale or acquisition</option><option>Working at ACT</option><option>Something else</option></select></div>
     <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" required></textarea></div>
-    <div><button class="btn btn--solid" type="submit">Send it</button></div>
+    <input type="hidden" name="source" value="joshpritchard.com" />
+    <div><button class="btn btn--solid" type="submit" data-submit>Send it</button></div>
+    <p class="cite" data-form-error hidden>That did not go through. Email <a class="link" href="mailto:josh@factari.com">josh@factari.com</a> instead and I will get it.</p>
   </form>
+  <div class="form-sent" data-form-sent hidden>
+    <span class="label">Sent</span>
+    <h2 class="h-item">That arrived. Thank you.</h2>
+    <p>It comes straight to me, not into a sequence. If you would rather just grab time, <a class="link" href="https://calendly.com/bxdoc" rel="noopener">the calendar is here</a>.</p>
+  </div>
+  </div>
   <aside class="contact-side rev"><dl>
     <div><dt>Email</dt><dd><a class="link" href="mailto:josh@factari.com">josh@factari.com</a></dd></div>
     <div><dt>Book time directly</dt><dd><a class="link" href="https://calendly.com/bxdoc" rel="noopener">calendly.com/bxdoc</a><br />Thirty minutes, no charge, no pitch.</dd></div>

@@ -49,6 +49,34 @@
     }
   });
 
+  /* ------------------------------------------------- contact form ----- */
+  var form = document.querySelector("[data-contact-form]");
+  if (form) {
+    var sent = document.querySelector("[data-form-sent]");
+    var errEl = form.querySelector("[data-form-error]");
+    var btn = form.querySelector("[data-submit]");
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      if (errEl) errEl.hidden = true;
+      if (btn) { btn.disabled = true; btn.textContent = "Sending\u2026"; }
+      var fd = new FormData(form);
+      var body = new URLSearchParams();
+      fd.forEach(function (v, k) { body.append(k, v); });
+      fetch(form.getAttribute("data-endpoint"), {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+        body: body.toString()
+      }).then(function () {
+        form.hidden = true;
+        if (sent) { sent.hidden = false; sent.scrollIntoView({ block: "center" }); }
+      }).catch(function () {
+        if (btn) { btn.disabled = false; btn.textContent = "Send it"; }
+        if (errEl) errEl.hidden = false;
+      });
+    });
+  }
+
   /* ----------------------------------------------- reveal on scroll ---- */
   var revs = document.querySelectorAll(".rev, [data-record]");
   if (!("IntersectionObserver" in window)) {
