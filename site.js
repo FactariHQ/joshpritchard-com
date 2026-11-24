@@ -49,6 +49,50 @@
     }
   });
 
+
+  /* ----------------------------------------------------- portfolio ---- */
+  var pfGrid = document.querySelector("[data-portfolio]");
+  var pfDialog = document.querySelector(".pf-dialog");
+  if (pfGrid && pfDialog && typeof pfDialog.showModal === "function") {
+    var pfBody = pfDialog.querySelector("[data-pf-body]");
+    var pfLast = null;
+    function pfOpen(id, push) {
+      var tpl = document.getElementById("pf-" + id);
+      if (!tpl) return;
+      pfBody.innerHTML = "";
+      pfBody.appendChild(tpl.content.cloneNode(true));
+      var h = pfBody.querySelector("h3");
+      if (h) h.id = "pf-dialog-title";
+      pfDialog.scrollTop = 0;
+      if (!pfDialog.open) pfDialog.showModal();
+      document.body.classList.add("pf-locked");
+      if (push) { try { history.replaceState(null, "", "#" + id); } catch (e) {} }
+    }
+    pfGrid.addEventListener("click", function (ev) {
+      var t = ev.target.closest("[data-pf]");
+      if (!t) return;
+      pfLast = t;
+      pfOpen(t.getAttribute("data-pf"), true);
+    });
+    pfDialog.addEventListener("click", function (ev) {
+      if (ev.target === pfDialog || ev.target.closest("[data-pf-close]")) pfDialog.close();
+    });
+    pfDialog.addEventListener("close", function () {
+      document.body.classList.remove("pf-locked");
+      try { history.replaceState(null, "", location.pathname + location.search + "#portfolio"); } catch (e) {}
+      if (pfLast) pfLast.focus({ preventScroll: true });
+    });
+    function pfFromHash() {
+      var h = location.hash.replace("#", "");
+      if (h && document.getElementById("pf-" + h)) {
+        pfLast = pfGrid.querySelector('[data-pf="' + h + '"]');
+        pfOpen(h, false);
+      }
+    }
+    window.addEventListener("hashchange", pfFromHash);
+    pfFromHash();
+  }
+
   /* ------------------------------------------------- contact form ----- */
   var form = document.querySelector("[data-contact-form]");
   if (form) {

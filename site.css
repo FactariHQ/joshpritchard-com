@@ -806,3 +806,85 @@ a { color: inherit; text-decoration: none; }
   .masthead, .footer, .hero__actions, .theme-toggle, .record { display: none !important; }
   body { background: #fff; color: #000; }
 }
+
+/* ----------------------------------------------------------- portfolio --- */
+
+.pf-grid {
+  display: grid;
+  gap: 1px;
+  background: var(--rule);
+  border-block: 1px solid var(--rule);
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 40rem) { .pf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 62rem) { .pf-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.pf-tile {
+  appearance: none;
+  border: 0;
+  margin: 0;
+  font: inherit;
+  text-align: left;
+  color: var(--ink);
+  background: var(--ground);
+  padding: clamp(1.4rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  cursor: pointer;
+  transition: background .18s ease;
+  min-height: 12.5rem;
+}
+.pf-tile:hover, .pf-tile:focus-visible { background: var(--ground-2); }
+.pf-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.pf-tile .label { color: var(--accent-ink); }
+.pf-tile__title { display: block; }
+.pf-tile__teaser { color: var(--ink-soft); font-size: var(--step--1); line-height: 1.55; }
+.pf-tile__more { margin-top: auto; }
+.pf-tile:hover .pf-tile__more { color: var(--accent-ink); }
+
+.pf-dialog {
+  border: 1px solid var(--rule);
+  background: var(--ground);
+  color: var(--ink);
+  padding: 0;
+  width: min(42rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 3rem);
+  box-shadow: var(--shadow);
+}
+.pf-dialog::backdrop { background: rgba(16, 20, 21, .62); backdrop-filter: blur(2px); }
+.pf-dialog[open] { animation: pf-in .22s ease; }
+@keyframes pf-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .pf-dialog[open] { animation: none; } }
+.pf-dialog__inner { padding: clamp(1.5rem, 4vw, 2.5rem); display: flex; flex-direction: column; gap: 1rem; }
+.pf-dialog__close {
+  align-self: flex-end;
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink-mute);
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .45rem .7rem;
+  cursor: pointer;
+}
+.pf-dialog__close:hover { color: var(--ink); border-color: var(--accent); }
+.pf-dialog__body { display: flex; flex-direction: column; gap: .8rem; }
+.pf-dialog__body .label { color: var(--accent-ink); }
+.pf-dialog__title { margin: 0; }
+.pf-dl { margin: .4rem 0 0; display: grid; gap: .25rem; }
+.pf-dl dt {
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-top: .9rem;
+  padding-top: .9rem;
+  border-top: 1px solid var(--rule-soft);
+}
+.pf-dl dt:first-child { margin-top: 0; }
+.pf-dl dd { margin: 0; color: var(--ink-soft); line-height: 1.6; }
+.pf-dialog__actions { margin-top: .5rem; }
+body.pf-locked { overflow: hidden; }
