@@ -40,6 +40,7 @@
         <li><a href="/about.html">About</a></li>
         <li><a href="/work.html">Work</a></li>
         <li><a href="/quick-review.html">Quick Review</a></li>
+        <li><a href="/ai-consultancy.html">AI</a></li>
         <li><a href="/writing.html">Writing</a></li>
         <li><a href="/cv.html">CV</a></li>
         <li><a href="/contact.html" aria-current="page">Contact</a></li>
@@ -66,7 +67,7 @@
     <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required /></div>
     <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required /></div>
     <div class="field"><label for="f-org">Organization <span style="text-transform:none;letter-spacing:0">(optional)</span></label><input id="f-org" name="organization" type="text" autocomplete="organization" /></div>
-    <div class="field"><label for="f-topic">What is this about?</label><select id="f-topic" name="topic"><option>Advice on my company</option><option>A Quick Review Consult</option><option>Speaking or teaching</option><option>Writing, press or a podcast</option><option>Partnership, sale or acquisition</option><option>Working at ACT</option><option>Something else</option></select></div>
+    <div class="field"><label for="f-topic">What is this about?</label><select id="f-topic" name="topic"><option>Advice on my company</option><option>A Quick Review Consult</option><option value="AI Consultancy">AI Consultancy — building AI into my organization</option><option>Speaking or teaching</option><option>Writing, press or a podcast</option><option>Partnership, sale or acquisition</option><option>Working at ACT</option><option>Something else</option></select></div>
     <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" required></textarea></div>
     <input type="hidden" name="source" value="joshpritchard.com" />
     <div><button class="btn btn--solid" type="submit" data-submit>Send it</button></div>
@@ -99,6 +100,7 @@
         <li><a href="/about.html">About</a></li>
         <li><a href="/work.html">Work</a></li>
         <li><a href="/quick-review.html">Quick Review</a></li>
+        <li><a href="/ai-consultancy.html">AI Consultancy</a></li>
         <li><a href="/writing.html">Writing</a></li>
         <li><a href="/cv.html">CV</a></li>
         <li><a href="/contact.html">Contact</a></li>
@@ -112,6 +114,7 @@
     </div>
   </div>
 </footer>
+<script>(function(){try{if(new URLSearchParams(location.search).get("topic")==="ai"){var o=document.querySelector('#f-topic option[value="AI Consultancy"]');if(o)o.selected=true;}}catch(e){}})();</script>
 <script src="/site.js" defer></script>
 </body>
 </html>

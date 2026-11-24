@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://joshpritchard.com/</loc><lastmod>2026-08-27</lastmod><priority>1.0</priority></url>
+  <url><loc>https://joshpritchard.com/</loc><lastmod>2026-11-24</lastmod><priority>1.0</priority></url>
   <url><loc>https://joshpritchard.com/about.html</loc><lastmod>2026-08-27</lastmod><priority>0.8</priority></url>
-  <url><loc>https://joshpritchard.com/work.html</loc><lastmod>2026-08-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://joshpritchard.com/work.html</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://joshpritchard.com/quick-review.html</loc><lastmod>2026-08-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://joshpritchard.com/ai-consultancy.html</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://joshpritchard.com/writing.html</loc><lastmod>2026-08-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://joshpritchard.com/cv.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
   <url><loc>https://joshpritchard.com/presentations.html</loc><lastmod>2026-09-05</lastmod><priority>0.6</priority></url>
-  <url><loc>https://joshpritchard.com/contact.html</loc><lastmod>2026-08-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://joshpritchard.com/contact.html</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
 </urlset>
